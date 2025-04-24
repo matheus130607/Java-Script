@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Convensor de moedas</title>
+</head>
+<body>
+    Valor em Reais <input type="number" id="reais" value="10" ><br><br>
+    Operador (Dolar e Euro) <input type="text" id="operador" value="dolar"><br><br>
+    <button onclick="dinheiroReais()">Exibir Valor Atual</button>
+    <div id="resultadoConta"></div>
+<script>
+    function dinheiroReais() {
+        let reais = parseFloat(document.getElementById("reais").value);
+        let operador = document.getElementById("operador").value;
+        let resultado;
+        switch (operador){
+            case "dolar":
+                resultado = reais / 5.78;
+                break;
+            case "euro":
+                resultado = reais / 6.34;
+                break;
+                default:
+                    resultado = "Valor inválido";
+        }
+        document.getElementById("resultadoConta").innerHTML = ` O valor da conversão de Reais é ${resultado.toFixed(2)}`
+    }
+</script>
+</body>
+</html>

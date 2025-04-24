@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 6</title>
+</head>
+<body>
+    <h1>Loja de roupas</h1>
+    <h3>Nossas peças: (Camisa, Calça, Vestido) </h3>
+    Roupa: <input type="text" id="roupa" value="camisa"><br><br>
+    Quantidade: <input type="number" id="quant" value="1"><br><br>
+    <button onclick="compras()">Exibir Compras</button>
+    <div id="resultado"></div>
+
+    <script>
+
+        function compras() {
+            let roupa = document.getElementById("roupa").value.toLowerCase()
+            let quant = parseInt(document.getElementById("quant").value)
+            let total;
+            switch(roupa) {
+                case "camisa":
+                 total = quant * 50
+                  if (total < 100) {
+                    alert("Você não recebe desconto")
+                  } else if 
+                    (total =  (quant * 50) * 0.9){
+                        alert("Você recebeu um desconto")  
+                    } else {
+                    ("Valor indevido")
+                 }
+                  break;
+                  case "calça":
+                 total = quant * 40
+                  if (total < 100) {
+                    alert("Você não recebe desconto")
+                  } else if 
+                    (total =  (quant * 40) * 0.9){
+                        alert("Você recebeu um desconto")  
+                    } else {
+                    ("Valor indevido")
+                 }
+                  break;
+                  case "vestido":
+                 total = quant * 80
+                  if (total < 100) {
+                    alert("Você não recebe desconto")
+                  } else if 
+                    (total =  (quant * 80) * 0.9){
+                        alert("Você recebeu um desconto")  
+                    } else {
+                    ("Valor indevido")
+                 }
+                  break;
+                 default:
+                    total = "Inválido"
+                    
+
+
+            }
+            document.getElementById("resultado").innerHTML = `O item selecionado foi ${roupa}, e o preço total foi R$${total.toFixed(2)}`
+            
+        }
+    </script>
+</body>
+</html>

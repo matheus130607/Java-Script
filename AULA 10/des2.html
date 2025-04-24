@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Classificação de Notas</title>
+</head>
+<body>
+    Nota do aluno (0 a 10) <input type="number" id="nota"><br><br>
+<button onclick="exibirNota()">Exibir Notas</button>
+<div id="resultadoNota"></div>
+
+<script>
+    function exibirNota() {
+        let nota = parseInt(document.getElementById("nota").value);
+        let classificacao;
+        switch(nota) {
+            case 1:
+            case 2:
+            classificacao = "Você tirou um F";
+            break;
+            case 3:
+            case 4:
+            classificacao = "Você tirou um D";
+            break;
+            case 5:
+            case 6:
+            classificacao = "Você tirou um C";
+            break;
+            case 7:
+            case 8:
+            classificacao = "Você tirou um B";
+            break;
+            case 9:
+            case 10:
+            classificacao = "Você tirou um A";
+            break;
+            default:
+            classificacao = "Nota inválida";
+        }
+        document.getElementById("resultadoNota").innerHTML = ` Você tirou um ${classificacao}`
+    }
+</script>
+</body>
+</html>

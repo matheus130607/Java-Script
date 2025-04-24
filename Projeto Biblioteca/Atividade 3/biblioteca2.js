@@ -87,19 +87,12 @@ function atualizarLista(lista = biblioteca) {
   });
 }
 
-function emprestimoLivro () {
-    const titulo = document.getElementById("titulo").value;
-    const autor = document.getElementById("autor").value;
-    const ano = parseInt(document.getElementById("ano").value);
-
-    if(titulo && autor && ano) {
-        biblioteca.push({titulo, autor, ano});
-        document.getElementById("titulo").value = "";
-        document.getElementById("autor").value = "";
-        document.getElementById("ano").value = "";
-        atualizarLista();
-        alert("Emprestimo Realizado com sucesso");
-     } else {
-        alert("Por favor, preencha todos os campos.");
-     }
+function Emprestimos() {
+  const Titulo = document.getElementById("novo-emprestimo").value;
+  const nome = document.getElementById("nome-usuário").value;
+  let res = document.getElementById(`empresta`)
+  res.innerHTML = `<p> Livro emprestado : ${Titulo}.</p>`
+  res.innerHTML += `<p> Nome do usuário que emprestou : ${nome}.</p>`
 }
+
+

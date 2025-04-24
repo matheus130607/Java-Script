@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo calculadora Basica</title>
+</head>
+<body>
+    Número 1: <input type="number" id="numb1" value="10"><br>
+    Número 2: <input type="number" id="numb2" value="5"><br>
+    Operador (+, -, *, /): <input type="text" id="operador" value="+"><br><br>
+    <button onclick="calcular()">Calcular</button>
+    <div id="resultadoCalculo"></div>
+
+    <script>
+        function calcular() {
+            let numb1 = parseInt(document.getElementById("numb1").value);
+            let numb2 = parseInt(document.getElementById("numb2").value);
+            let operador = document.getElementById("operador").value;
+            let resultado;
+            switch (operador) {
+                case "+":
+                resultado = numb1 + numb2;
+                break;
+                case "-":
+                resultado = numb1 - numb2;
+                break;
+                case "*":
+                resultado = numb1 * numb2;
+                break;
+                case "/":
+                if (numb2 !==0) {
+                    resultado = numb1 / numb2;
+                   } else {
+                    resultado = "Erro: Divisão por zero!"
+                   }
+                break;
+                default:
+                    resultado = "Operador Iválido"
+            }
+            document.getElementById("resultadoCalculo").innerHTML = ` O resultado é <strong> ${resultado} </strong>`
+        }
+    </script>
+</body>
+</html>

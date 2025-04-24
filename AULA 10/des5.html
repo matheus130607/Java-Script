@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecânica de carros</title>
+</head>
+<body>
+    <h1>Mecânica de Carros</h1>
+
+<h3> Modelos que trabalhamos: (Camaro, Audi, Ferrari) </h3>
+    Modelo: <input type="text" id="modelo" value="Ferrari"><br><br>
+    
+<h3> Serviços: (Troca de oleo e troca de pneu) </h3>
+    Serviço: <input type="text"id="serviço" ><br><br>
+    <button onclick="info()">Informações do pedido</button>
+    
+    <div id="resultado"></div>
+
+<script>
+function info() {
+
+    let modelo = document.getElementById("modelo").value.toLowerCase()
+    let serviço = document.getElementById("serviço").value.toLowerCase()
+    let info;
+    let comb;
+    let valor;
+    let ano;
+
+    switch(modelo) {
+        case "ferrari":
+            comb = "Gasolina"
+            valor = "500.000.00"
+            ano = "2025"
+           if (serviço =="troca de oleo")
+                ser = 200.00
+            else if (serviço =="troca de pneu")
+                ser = 500.00
+        break;
+
+        case "audi":
+            comb = "Elétrico"
+            valor = "600.000.00"
+            ano = "2024"
+           if (serviço =="troca de oleo")
+                ser = 100.00
+            else if (serviço =="troca de pneu")
+                ser = 500.00
+        break;
+
+        case "camaro":
+            comb = "Gasolina"
+            valor = "200.000.00"
+            ano = "2020"
+           if (serviço =="troca de oleo")
+                ser = 500.00
+            else if (serviço =="troca de pneu")
+                ser = 700.00
+        break;
+    }
+
+document.getElementById("resultado").innerHTML = `Modelo:${modelo}\n Valor:R$${valor}\n Tipo de combustivel: ${comb}\n Ano:${ano}\n 
+O serviço realizado foi ${serviço} com o custoR$${ser} `
+}
+
+</script>
+</body>
+</html>
