@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+<body>
+    <h1>Cafeteria</h1>
+    <div id="adicionarItens">
+    <button onclick="comprarExpresso()">Café Expresso</button>
+    <label for="comprarExpresso">R$ 5,00</label>
+    <button onclick="comprarCappuccino()">Cappuccino</button>
+    <label for="comprarCappuccino">R$ 8,00</label>
+    <button onclick="comprarChocolate()">Chocolate Quente</button>
+    <label for="comprarChocolate">R$ 7,50</label>
+    <button onclick="comprarCha()">Chá</button>
+    <label for="comprarCha">R$ 4,00</label>
+</div>
+    <p id="result"></p>
+
+    <H2>Total</H2>
+    <button onclick="somar()">Total</button>
+    <p id="total"></p>
+
+    <script>
+        function comprarExpresso ()  {
+            let res = document.getElementById('result')
+            let ex = 5
+            res.innerHTML +=  `<p> O valor final a ser pago sera de R$${ex} reais</p>`
+}
+
+function comprarCappuccino ()  {
+    let res1 = document.getElementById('result')
+            let ex1 = 8
+            res1.innerHTML +=  `<p> O valor final a ser pago sera de R$${ex1} reais</p>`
+}
+
+function comprarChocolate ()  {
+    let res2 = document.getElementById('result')
+            let ex2 = Number.parseFloat(7,50)
+            res2.innerHTML +=  `<p> O valor final a ser pago sera de R$${ex2} reais</p>`
+}
+
+function comprarCha()  {
+    let res3 = document.getElementById('result')
+            let ex3 = 4
+            res3.innerHTML +=  `<p> O valor final a ser pago sera de R$${ex3} reais</p>`
+}
+function total () {
+    let res = document.getElementById('total')
+    let total = soma+= []
+     res.innerHTML +=  `<p> O valor final a ser pago sera de R$${total} reais</p>`
+
+}
+    </script>
+</body>
+</html>
