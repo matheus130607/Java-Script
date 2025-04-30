@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História dos discos</title>
+</head>
+<body>
+    <h1>Você sabia ??</h1>
+    Selecione entre  Cassete, DVD e CD: <input type="text" id="nost">
+    <button onclick="historias()">Histórias</button>
+    <div id="resultado"></div>
+
+    <script>
+        function historias() {
+            let fita = document.getElementById("nost").value;
+            let resul;
+
+            switch(fita) {
+                case "Cassete":
+                    resul = "A fita cassete foi um dos principais meios de armazenamento de áudio entre as décadas de 1970 e 1990. Compacta e portátil, ela permitia que as pessoas gravassem músicas, programas de rádio e até mensagens pessoais com facilidade. Popular em rádios e walkmans, a fita cassete marcou gerações, tornando-se um símbolo da cultura analógica. Apesar de ter sido superada pelos formatos digitais, ainda desperta nostalgia e admiração entre colecionadores e amantes da música vintage."
+                    break;
+                case "DVD":
+                    resul = "O DVD, sigla para Digital Versatile Disc, foi um avanço tecnológico importante a partir do final dos anos 1990. Com capacidade muito maior que a dos CDs, ele permitia armazenar filmes, músicas, jogos e arquivos com qualidade superior. Tornou-se o principal formato para filmes caseiros, substituindo as fitas VHS, e era muito usado em computadores e aparelhos de vídeo. Apesar de hoje estar em desuso por causa dos serviços de streaming e armazenamento digital, o DVD ainda é lembrado como um marco da era digital no entretenimento doméstico."
+                    break;
+                case "CD":
+                    resul = "O CD, ou Disco Compacto, revolucionou a forma de ouvir música a partir dos anos 1980. Com som digital de alta qualidade e sem desgaste com o uso, ele rapidamente substituiu os discos de vinil e fitas cassete. Além de músicas, passou a ser usado para armazenar dados em computadores, tornando-se essencial na era digital. Sua praticidade, durabilidade e portabilidade o tornaram extremamente popular por décadas. Embora hoje tenha sido superado por tecnologias mais modernas, o CD ainda é lembrado com carinho por sua importância na história da mídia."
+                    break;
+                    default:
+                        resultado = "Item inválido"
+            }
+            document.getElementById("resultado").innerHTML = `A breve descrição da ${fita} é ${resul}`
+        }
+    </script>
+</body>
+</html>
