@@ -95,30 +95,4 @@ function Emprestimos() {
   res.innerHTML += `<p> Nome do usuário que emprestou : ${nome}.</p>`
 }
 
-let vendas = [];
-
-function registrarVenda() {
-  const titulo = document.getElementById('venda-titulo').value;
-  const preco = document.getElementById('venda-preco').value;
-  const comprador = document.getElementById('venda-comprador').value;
-
-  if (titulo && preco && comprador) {
-    const listaVendas = document.getElementById('lista-vendas');
-    const item = document.createElement('li');
-    item.textContent = ` Titulo: ${titulo}, Preço: R$${preco}, Comprador: ${comprador}`;
-    listaVendas.appendChild(item);
-
-    // Adicionar venda ao array de vendas
-    vendas.push({titulo, preco, comprador});
-
-    //Limpar os campos
-    document.getElementById('venda-titulo').value = '';
-    document.getElementById('venda-preco').value = '';
-    document.getElementById('venda-comprador').value = '';
-
-  } else {
-    alert('Por favor, preencha todos os campos!');
-  }
-}
-
 
