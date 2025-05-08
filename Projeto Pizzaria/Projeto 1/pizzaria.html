@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="pizzaria.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Pizzaria</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Pizzaria Teste</h1>
+        <div class="menu">
+            <button onclick="mostrarPizza('cadastro')">
+                <i class="fa-solid fa-pizza-slice"></i>Cadastrar Pizza</button>
+        <button onclick="mostrarPizza('consulta')">
+            <i class="fas fa-search icon"></i>Consultar Pizzas</button>
+          <button onclick="mostrarPizza('alterar')"><i class="fa-solid fa-file-import"></i>Alterar Pizza</button>
+        <button onclick="mostrarPizza('venda')"><i class="fa-solid fa-cart-plus"></i>Venda de Pizzas</button>
+            <Button onclick="gerarRelatorioVendas()"><i class="fa-solid fa-bookmark"></i>Relatório de vendas</Button>
+    </div>
+
+    <!--Cadastro-->
+    <div id="cadastro" class="hidden">
+        <h2>Cadastrar Pizza</h2>
+        <div class="form-group">
+            <label for="pizza">Pizza:</label>
+            <input type="text" id="pizza"
+            placeholder="Digite o nome da Pizza">
+        </div>
+        <div class="form-group">
+            <label for="ingredientes">Ingredientes:</label>
+            <input type="text" id="ingredientes"
+            placeholder="Digite os ingredientes">
+        </div>
+        <div class="form-group">
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco"
+            placeholder="Digite o preço da pizza">
+        </div>
+        <button onclick="adicinarPizza()">Adicionar Pizza</button>
+    </div>
+
+    <!--Consulta-->
+<div id="consulta" class="hidden">
+    <h2>Consultar Pizzas</h2>
+    <input type="text" id="busca" placeholder="buscar por pizza" oninput="buscarPizza()">
+    <table>
+        <thead>
+            <tr>
+                <th>Pizza</th>
+                <th>Ingredientes</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody id="lista-pizzas"></tbody>
+    </table>
+</div>
+
+<!--Alteração-->
+<div id="alterar" class="hidden">
+    <h2>Alterar Pizza</h2>
+    <input type="text" id="busca-alterar"
+    placeholder="Buscar por Pizza"
+    oninput="buscarPizzaParaAlterar()">
+    <div id="form-alterar" class="hidden">
+        <div class="form-group">
+            <label for="nova-pizza">Novo nome da Pizza:</label>
+            <input type="text" id="nova-pizza" placeholder="Digite o novo nome da Pizza">
+        </div>
+        <div class="form-group">
+            <label for="novo-ingredientes">Novos ingredientes:</label>
+            <input type="text" id="novo-ingredientes" placeholder="Digite o novo ingrediente">
+          </div>
+          <div class="form-group">
+            <label for="novo-preco">Novo Preço:</label>
+            <input type="number" id="novo-preco" placeholder="Digite o novo Preço">
+          </div>
+          <button onclick="alterarPizza()">Salvar Alterações</button>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    <script src="pizzaria.js"></script>
+</body>
+</html>

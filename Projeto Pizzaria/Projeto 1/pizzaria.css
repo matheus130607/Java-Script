@@ -1,0 +1,122 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1594007654729-407eedc4be3a');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #4a2c2a;
+    padding: 20px;
+}
+
+/* Fundo opaco para legibilidade */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgba(255, 251, 224, 0.95); /* leve opacidade */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #d6453d;
+    margin-bottom: 20px;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.menu button {
+    background-color: #d6453d;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu button:hover {
+    background-color: #b3332b;
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+    color: #b3332b;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d6bfa7;
+    border-radius: 5px;
+    background-color: #fffaf0;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #ffa447;
+    color: #4a2c2a;
+    padding: 10px 20px;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #e69334;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #fffaf0;
+}
+
+table th,
+table td {
+    border: 1px solid #d6bfa7;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #fdd59a;
+    color: #4a2c2a;
+}
