@@ -1,122 +1,140 @@
-/* Reset básico */
+/* Estilos globais */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('https://images.unsplash.com/photo-1594007654729-407eedc4be3a');
-    background-size: cover;
+    background-image: url('https://img.freepik.com/vetores-premium/padrao-de-frutas-pizza-suco-de-roma-frutas-contorno-branco-em-fundo-preto_925572-520.jpg?semt=ais_hybrid&w=740');
+    background-size: auto;
     background-position: center;
     background-attachment: fixed;
-    color: #4a2c2a;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
 }
+ 
+  
+  
 
-/* Fundo opaco para legibilidade */
+/* Container principal */
 .container {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: rgba(255, 251, 224, 0.95); /* leve opacidade */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgba(18, 10, 10, 0.8); /* Fundo semitransparente para melhorar a legibilidade */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
 }
 
+/* Título */
 h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #d6453d;
-    margin-bottom: 20px;
+  text-align: center;
+  color: #e74c3c;
+  margin-bottom: 20px;
 }
 
+/* Menu */
 .menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
 .menu button {
-    background-color: #d6453d;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s;
 }
 
 .menu button:hover {
-    background-color: #b3332b;
+  background-color: #c0392b;
+  transform: scale(1.1);
 }
 
-.hidden {
-    display: none;
+.menu i {
+  margin-right: 8px;
 }
 
-h2 {
-    color: #b3332b;
-    margin-bottom: 15px;
-}
-
+/* Formulários */
 .form-group {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #d6bfa7;
-    border-radius: 5px;
-    background-color: #fffaf0;
-    font-size: 1rem;
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 button {
-    background-color: #ffa447;
-    color: #4a2c2a;
-    padding: 10px 20px;
-    border: none;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s;
 }
 
 button:hover {
-    background-color: #e69334;
+  background-color: #27ae60;
+  transform: scale(1.1);
 }
 
+/* Tabelas */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    background-color: #fffaf0;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-table th,
-table td {
-    border: 1px solid #d6bfa7;
-    padding: 10px;
-    text-align: left;
+table, th, td {
+  border: 1px solid #ddd;
 }
 
-table th {
-    background-color: #fdd59a;
-    color: #4a2c2a;
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+/* Listas */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #0f0606;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Esconder elementos */
+.hidden {
+  display: none;
 }

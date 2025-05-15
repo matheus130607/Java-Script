@@ -12,21 +12,24 @@
         <h1>Pizzaria Teste</h1>
         <div class="menu">
             <button onclick="mostrarPizza('cadastro')">
-                <i class="fa-solid fa-pizza-slice"></i>Cadastrar Pizza</button>
+            <i class="fa-solid fa-pizza-slice"></i>Cadastrar Pizza</button>
         <button onclick="mostrarPizza('consulta')">
-            <i class="fas fa-search icon"></i>Consultar Pizzas</button>
-          <button onclick="mostrarPizza('alterar')"><i class="fa-solid fa-file-import"></i>Alterar Pizza</button>
-        <button onclick="mostrarPizza('venda')"><i class="fa-solid fa-cart-plus"></i>Venda de Pizzas</button>
-            <Button onclick="gerarRelatorioVendas()"><i class="fa-solid fa-bookmark"></i>Relatório de vendas</Button>
+            <i class="fas fa-search icon"></i>Consultar</button>
+          <button onclick="mostrarPizza('alterar')">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>Alterar</button>
+        <button onclick="mostrarPizza('venda')">
+            <i class="fas fa-shopping-cart icon"></i>Vendas</button>
+            <Button onclick="gerarRelatorioVendas()">
+            <i class="fa-solid fa-bookmark"></i>Relatório</Button>
     </div>
 
     <!--Cadastro-->
     <div id="cadastro" class="hidden">
-        <h2>Cadastrar Pizza</h2>
+        <h2>Cadastrar Pizza para cardápio</h2>
         <div class="form-group">
-            <label for="pizza">Pizza:</label>
-            <input type="text" id="pizza"
-            placeholder="Digite o nome da Pizza">
+            <label for="sabor">Sabor:</label>
+            <input type="text" id="sabor"
+            placeholder="Digite o sabor da Pizza">
         </div>
         <div class="form-group">
             <label for="ingredientes">Ingredientes:</label>
@@ -38,17 +41,18 @@
             <input type="number" id="preco"
             placeholder="Digite o preço da pizza">
         </div>
-        <button onclick="adicinarPizza()">Adicionar Pizza</button>
+        <button onclick ="adicionarPizza()">Adicionar Pizza</button>
+    
     </div>
 
     <!--Consulta-->
 <div id="consulta" class="hidden">
     <h2>Consultar Pizzas</h2>
-    <input type="text" id="busca" placeholder="buscar por pizza" oninput="buscarPizza()">
+    <input type="text" id="busca" placeholder="buscar por sabor" oninput="buscarPizza()">
     <table>
         <thead>
             <tr>
-                <th>Pizza</th>
+                <th>Sabor</th>
                 <th>Ingredientes</th>
                 <th>Preço</th>
             </tr>
@@ -61,12 +65,12 @@
 <div id="alterar" class="hidden">
     <h2>Alterar Pizza</h2>
     <input type="text" id="busca-alterar"
-    placeholder="Buscar por Pizza"
+    placeholder="Buscar por Sabor"
     oninput="buscarPizzaParaAlterar()">
     <div id="form-alterar" class="hidden">
         <div class="form-group">
-            <label for="nova-pizza">Novo nome da Pizza:</label>
-            <input type="text" id="nova-pizza" placeholder="Digite o novo nome da Pizza">
+            <label for="novo-sabor">Novo sabor:</label>
+            <input type="text" id="novo-sabor" placeholder="Digite o novo sabor">
         </div>
         <div class="form-group">
             <label for="novo-ingredientes">Novos ingredientes:</label>
@@ -80,7 +84,38 @@
     </div>
 </div>
 
+<div id="venda" class="hidden">
+    <h2>Venda de Pizzas</h2>
+    <div class="form-group">
+        <label for="venda-sabor">Sabor da pizza:</label>
+        <input type="text" id="venda-sabor" placeholder="Digite o sabor da pizza">
+    </div>
+    <div class="form-group">
+        <label for="venda-preco">Preço:</label>
+        <input type="number" id="venda-preco" placeholder="Digite o preco da Pizza">
+    </div>
+    <div class="form-group">
+        <label for="venda-comprador">Nome do comprador:</label>
+        <input type="text" id="venda-comprador" placeholder="Digite o nome do comprador">
+    </div>
+    <button onclick="registrarVenda()">Registrar Venda</button>
+    <h3>Pizzas vendidas</h3>
+    <ul id="lista-vendas"></ul>
+</div>
 
+<div id="relatorio-vendas" class="hidden">
+    <h3>Relatório</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Sabor</th>
+                <th>Preço</th>
+                <th>Comprador</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-relatorio-vendas"></tbody>
+    </table>
+</div>
 
 
 
