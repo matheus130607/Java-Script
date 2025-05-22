@@ -17,7 +17,27 @@ body {
 }
  
   
-  
+/* Mensagem de sucesso/erro */
+.mensgame {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.mensgame.sucesso {
+  background-color: rgba(76, 175, 80, 0.9);
+  color: white;
+}
+
+.mensgame.erro {
+  background-color: rgba(244, 67, 54, 0.9);
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
 
 /* Container principal */
 .container {
