@@ -1,0 +1,96 @@
+/* Fundo com imagem da pizzaria */
+body {
+  background-image: url('https://cdn.pixabay.com/photo/2020/05/12/16/18/pizza-5163790_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container central com fundo escurecido */
+.container {
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para leitura */
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 100%;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+/* Títulos */
+.container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.container h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Grupo de inputs */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+}
+
+/* Botão */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #c62828;
+}
+
+/* Mensagem de sucesso/erro */
+.mensgame {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.mensgame.sucesso {
+  background-color: rgba(76, 175, 80, 0.9);
+  color: white;
+}
+
+.mensgame.erro {
+  background-color: rgba(244, 67, 54, 0.9);
+  color: white;
+}
+
+.hidden {
+  display: none;
+}

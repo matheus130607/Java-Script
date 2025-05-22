@@ -1,3 +1,34 @@
+function exibirMensagem (texto, tipo) {
+const mensagem = document.getElementById("mensagem");
+mensagem.textContent = texto;
+mensagem.className = ` mensagem ${tipo} `;
+mensagem.classList.remove("hidden");
+
+setTimeout (() => {
+    mensagem.classList.add("hidden");
+}, 5000);
+}
+
+function validarLogin() {
+    const usuario = document.getElementById ("usuario").value;
+    const senha = document.getElementById("senha").value;
+
+    const usuarioCorreto = "admin";
+    const senhaCorreto = "1234";
+
+    if (usuario === usuarioCorreto && senha === senhaCorreto) {
+        exibirMensagem("Login realizado com sucesso! ", "sucesso");
+        setTimeout (() => {
+            window.location.href = "pizzaria.html";
+        }, 500);
+    } else {
+        exibirMensagem("Usuário ou senha incorretos.", "erro");
+    }
+}
+
+
+
+
 let pizzaria = [];
 let pizzaParaAlterar = null;
 
@@ -118,7 +149,6 @@ function gerarRelatorioVendas() {
         alert('Nenhuma venda registrada');
         return;
     }
-
     let totalVendas = 0;
     
     if(totalVendas.length === 0) {
