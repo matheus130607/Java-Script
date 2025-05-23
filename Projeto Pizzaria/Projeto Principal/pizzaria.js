@@ -1,7 +1,7 @@
 function exibirMensagem (texto, tipo) {
 const mensagem = document.getElementById("mensagem");
 mensagem.textContent = texto;
-mensagem.className = ` mensagem ${tipo} `;
+mensagem.className = `mensagem ${tipo}`;
 mensagem.classList.remove("hidden");
 
 setTimeout (() => {
@@ -53,10 +53,9 @@ function adicionarPizza() {
         document.getElementById("ingredientes").value = "";
         document.getElementById("preco").value = "";
         atualizarLista();
-        exibirMensagem("Pizza adicionado com sucesso!!!");
-        setTimeout(() => {},3000);
+       document.getElementById('text').innerHTML = `Pizza adicionado com sucesso!!!`;
     } else {
-        document.getElementById('text').innerHTML = ("Por favor, preencha todos os campos.");
+        document.getElementById('text').innerHTML = `Erro ao cadastrar pizza!!!`;
     }
 }
 
