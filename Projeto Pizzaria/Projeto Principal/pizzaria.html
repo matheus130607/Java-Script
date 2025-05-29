@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Pizzaria Teste</h1>
+        <h1>Pizzaria MisterPizza</h1>
         <div class="menu">
             <button onclick="mostrarPizza('cadastro')">
             <i class="fa-solid fa-pizza-slice"></i>Cadastrar Pizza</button>
@@ -25,6 +25,8 @@
            
             <Button onclick="gerarRelatorioVendas()">
             <i class="fa-solid fa-bookmark"></i>Relatório</Button>
+            
+            <button onclick="login()"><i class="fa-solid fa-right-to-bracket"></i>Login</button>
     </div>
 
     <!--Cadastro-->
@@ -106,6 +108,7 @@
     <button onclick="registrarVenda()">Registrar Venda</button>
     <h3>Pizzas vendidas</h3>
     <ul id="lista-vendas"></ul>
+    <p id="text3"></p>
 </div>
 
 <div id="relatorio-vendas" class="hidden">
@@ -120,6 +123,7 @@
         </thead>
         <tbody id="tabela-relatorio-vendas"></tbody>
     </table>
+    <p id="text4"></p>
 </div>
 
 

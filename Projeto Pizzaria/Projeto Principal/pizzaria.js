@@ -15,6 +15,8 @@ function validarLogin() {
 
     const usuarioCorreto = "admin";
     const senhaCorreto = "1234";
+    const usuarioCorreto2 = "matheus";
+    const senhaCorreto2 = "1234";
 
     if (usuario === usuarioCorreto && senha === senhaCorreto) {
         exibirMensagem("Login realizado com sucesso! ", "sucesso");
@@ -26,6 +28,11 @@ function validarLogin() {
     }
 }
 
+function login () {
+    setTimeout(() => {
+        window.location.href = "login.html"
+    }, 500)
+}
 
 
 
@@ -146,13 +153,13 @@ function gerarRelatorioVendas() {
     tabelaRelatorio.innerHTML = '';
 
     if (vendas.length === 0) {
-        alert('Nenhuma venda registrada');
+        document.getElementById('text4').innerHTML = `Nenhuma venda registrada`;
         return;
     }
     let totalVendas = 0;
     
     if(totalVendas.length === 0) {
-        alert('Valor de venda não registrada')
+        document.getElementById('text4').innerHTML = `Valor de venda não registrada`
         return;
     }
 
