@@ -15,8 +15,7 @@ function validarLogin() {
 
     const usuarioCorreto = "admin";
     const senhaCorreto = "1234";
-    const usuarioCorreto2 = "matheus";
-    const senhaCorreto2 = "1234";
+
 
     if (usuario === usuarioCorreto && senha === senhaCorreto) {
         exibirMensagem("Login realizado com sucesso! ", "sucesso");
@@ -90,8 +89,7 @@ function buscarPizzaParaAlterar() {
 
 function alterarPizza() {
     if (pizzaParaAlterar) {
-        const novoSabor = document.getElementById
-        ("novo-sabor").value;
+        const novoSabor = document.getElementById("novo-sabor").value;
         const novoIngredientes = document.getElementById ("novo-ingredientes").value;
         const novoPreco = parseFloat(document.getElementById("novo-preco").value);
 
@@ -100,13 +98,15 @@ function alterarPizza() {
             pizzaParaAlterar.ingredientes = novoIngredientes;
             pizzaParaAlterar.preco = novoPreco;
 
-            atualizarLista();
+          
             document.getElementById('text2').innerHTML = `Pizza alterado com sucesso!`;
-            document.getElementById("form-alterar").classList.add("hidden");
+       
         } else {
             document.getElementById('text2').innerHTML = `Por favor, preencha todos os campos`;
+             document.getElementById("form-alterar").classList.add("hidden");
         }
     }
+          atualizarLista();
 }
 
 function atualizarLista(lista = pizzaria) {
@@ -118,7 +118,7 @@ function atualizarLista(lista = pizzaria) {
         linha.innerHTML = `
         <td>${pizza.sabor}</td>
         <td>${pizza.ingredientes}</td>
-        <td>${pizza.preco}</td>
+        <td>R$ ${pizza.preco.toFixed(2)}</td>
         `;
         tabela.appendChild(linha);
     });
