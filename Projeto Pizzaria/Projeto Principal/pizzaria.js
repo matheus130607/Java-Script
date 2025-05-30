@@ -70,6 +70,7 @@ function buscarPizza() {
     const resultados = pizzaria.filter((pizza) =>
     pizza.sabor.toLowerCase().includes(busca));
     atualizarLista(resultados);
+    
 }
 
 function buscarPizzaParaAlterar() {
