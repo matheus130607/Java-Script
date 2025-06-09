@@ -9,6 +9,7 @@ setTimeout (() => {
 }, 5000);
 }
 
+//Login
 function validarLogin() {
     const usuario = document.getElementById ("usuario").value;
     const senha = document.getElementById("senha").value;
@@ -48,6 +49,8 @@ function mostrarPizza(secao) {
     document.getElementById(secao).classList.remove("hidden");
 }
 
+
+//Cadastro
 function adicionarPizza() {
     const sabor = document.getElementById("sabor").value;
     const ingredientes = document.getElementById("ingredientes").value;
@@ -65,14 +68,27 @@ function adicionarPizza() {
     }
 }
 
+//Consultar
 function buscarPizza() {
     const busca = document.getElementById("busca").value.toLowerCase();
     const resultados = pizzaria.filter((pizza) =>
     pizza.sabor.toLowerCase().includes(busca));
     atualizarLista(resultados);
-    
+      if(resultados.length === 0 ) {
+        document.getElementById('textConsulta').innerHTML = "Pizza não encontrada"
+        return;
+    }
+    if (resultados) {
+        document.getElementById("textConsulta").innerHTML ="Pizza Encontrada"
+        return;
+    }
+    else {
+        document.getElementById('textConsulta').innerHTML = "Pizza não."
+    }
 }
 
+
+//Alterar
 function buscarPizzaParaAlterar() {
     const busca = document.getElementById("busca-alterar").value.toLowerCase();
     pizzaParaAlterar = pizzaria.find((pizza) =>
@@ -83,8 +99,10 @@ function buscarPizzaParaAlterar() {
         document.getElementById("novo-sabor").value = pizzaParaAlterar.sabor;
         document.getElementById("novo-ingredientes").value = pizzaParaAlterar.ingredientes;
         document.getElementById("novo-preco").value = pizzaParaAlterar.preco;
+        document.getElementById('textAlteracao').innerHTML = `Pizza Encontrada`
     } else {
-        document.getElementById('text2').innerHTML = `Pizza não encontrado.`;
+        document.getElementById('textAlteracao').innerHTML = `Pizza não encontrado.`
+        return;
     }
 }
 
@@ -125,14 +143,37 @@ function atualizarLista(lista = pizzaria) {
     });
 }
 
+
+// Vendas
 let vendas = [];
+let pizzaVenda = null;
+
+function buscarPizzaVenda() {
+    const busca = document.getElementById("busca-venda").value.toLowerCase();
+    pizzaVenda = pizzaria.find((pizza) => pizza.sabor.toLowerCase().includes(busca));
+
+    if (pizzaVenda) {
+        document.getElementById("form-venda").classList.remove("hidden");
+        document.getElementById("venda-sabor").value = pizzaVenda.sabor;
+        document.getElementById("venda-preco").value = pizzaVenda.preco;
+        document.getElementById('textVenda').innerHTML = `Pizza encontrada.`
+    } else {
+        document.getElementById('textVenda').innerHTML = `Pizza não encontrada.` 
+        return;
+    }
+}
+
 
 function registrarVenda() {
     const sabor = document.getElementById('venda-sabor').value;
-    const preco = document.getElementById('venda-preco').value;
+    const preco = parseFloat(document.getElementById('venda-preco').value);
     const comprador = document.getElementById('venda-comprador').value;
 
     if (sabor && preco && comprador) {
+        pizzaVenda.sabor = sabor
+        pizzaVenda.preco = preco
+        
+
      const listaVendas = document.getElementById('lista-vendas');
      const item = document.createElement('li');
      item.textContent = ` Sabor: ${sabor}, Preço: R$${preco}, Comprador: ${comprador}`;
@@ -143,27 +184,21 @@ function registrarVenda() {
      document.getElementById('venda-sabor').value = '';
      document.getElementById('venda-preco').value = '';
      document.getElementById('venda-comprador').value = '';
+     document.getElementById('text3').innerHTML = "Venda adicionada com sucesso"
 
     } else {
         document.getElementById('text3').innerHTML = `Por favor, preencha todos os campos!`;
     }
 }
 
+
+// Relatório
 function gerarRelatorioVendas() {
     const tabelaRelatorio = document.getElementById('tabela-relatorio-vendas');
     tabelaRelatorio.innerHTML = '';
 
-    if (vendas.length === 0) {
-        document.getElementById('text4').innerHTML = `Nenhuma venda registrada`;
-        return;
-    }
     let totalVendas = 0;
     
-    if(totalVendas.length === 0) {
-        document.getElementById('text4').innerHTML = `Valor de venda não registrada`
-        return;
-    }
-
     vendas.forEach((venda) => {
         const linha = document.createElement('tr');
         linha.innerHTML = `

@@ -55,6 +55,7 @@
     <!--Consulta-->
 <div id="consulta" class="hidden">
     <h2>Consultar Pizzas</h2>
+    <p id="textConsulta"></p>
     <input type="text" id="busca" placeholder="buscar por sabor" oninput="buscarPizza()">
     <table>
         <thead>
@@ -71,9 +72,9 @@
 <!--Alteração-->
 <div id="alterar" class="hidden">
     <h2>Alterar Pizza</h2>
+    <p id="textAlteracao"></p>
     <input type="text" id="busca-alterar"
-    placeholder="Buscar por Sabor"
-    oninput="buscarPizzaParaAlterar()">
+    placeholder="Buscar por Sabor" oninput="buscarPizzaParaAlterar()">
     <div id="form-alterar" class="hidden">
         <div class="form-group">
             <label for="novo-sabor">Novo sabor:</label>
@@ -91,9 +92,12 @@
           <p id="text2"></p>
     </div>
 </div>
-    <!--Venda-->
+    <!--Vendas-->
 <div id="venda" class="hidden">
     <h2>Venda de Pizzas</h2>
+    <p id="textVenda"></p>
+    <input type="text" id="busca-venda" placeholder="Buscar por nome" oninput="buscarPizzaVenda()">
+    <div id="form-venda" class="hidden">
     <div class="form-group">
         <label for="venda-sabor">Sabor da pizza:</label>
         <input type="text" id="venda-sabor" placeholder="Digite o sabor da pizza">
@@ -107,11 +111,14 @@
         <input type="text" id="venda-comprador" placeholder="Digite o nome do comprador">
     </div>
     <button onclick="registrarVenda()">Registrar Venda</button>
+    <p id="text3"></p>
+    </div>
     <h3>Pizzas vendidas</h3>
     <ul id="lista-vendas"></ul>
-    <p id="text3"></p>
 </div>
 
+
+<!--Relatório-->
 <div id="relatorio-vendas" class="hidden">
     <h3>Relatório</h3>
     <table>
